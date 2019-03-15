@@ -1,14 +1,18 @@
-#include <Arduino.h>
+#include "Motor.h"
 
-void setup()
-{
+Motor motor(11, 10, 9);
+
+void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
+    Serial.begin(9600);
+
 }
 
-void loop()
-{
-    digitalWrite(LED_BUILTIN, HIGH); // turn the LED on (HIGH is the voltage level)
-    delay(1000);                     // wait for a second
-    digitalWrite(LED_BUILTIN, LOW);  // turn the LED off by making the voltage LOW
-    delay(1000);                     // wait for a second
+void loop() {
+    if (Serial.available()) {
+        long i = Serial.parseInt();
+        motor.drive(i);
+        Serial.println("set speed to ");
+        Serial.println(i);
+    }
 }
