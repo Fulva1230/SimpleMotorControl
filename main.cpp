@@ -19,5 +19,4 @@ void loop() {
         Serial.println("set speed to ");
         Serial.println(i);
     }
-//    FFFF
 }
