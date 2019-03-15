@@ -1,6 +1,10 @@
 #include "Motor.h"
 
-Motor motor(11, 10, 9);
+#define PIN_ENA 11
+#define PIN_1 10
+#define PIN_2 9
+
+Motor motor(PIN_ENA, PIN_1, PIN_2);
 
 void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
