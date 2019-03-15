@@ -9,3 +9,5 @@ get_board_id(board_id nano atmega328)
 add_arduino_executable(ArduinoSample ${board_id} main.cpp)
 # Upload the created target through a connected Serial Port (Where your board is connected to)
 # upload_arduino_target(ArduinoSample "${board_id}" COM3)
+
+#add "-DCMAKE_TOOLCHAIN_FILE=cmake/Arduino-Toolchain.cmake" to cmake option
